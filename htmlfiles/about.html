@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dr. Angad Tiwari</title>
+   <link rel="stylesheet" href="/cssfiles/about.css">
+</head>
+<body>
+
+
+     <!-- Progress Bar -->
+     <div class="progress-bar"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <img src="/assests/logo for header.png" alt="Logo" class="logo">
+            <div class="nav-links">
+                <a href="/index.html" class="nav-link">Home</a>
+                <a href="decades.html" class="nav-link">Decades of discovery</a>
+                <a href="timemachine.html" class="nav-link">Time Machine</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="profile-image-container">
+                <img src="/assests/angad.jpg" alt="Dr. Angad Tiwari" class="profile-image">
+            </div>
+            <div class="about-content">
+                <h1 class="about-title">Why WE Do, What We Do</h1>
+                <p class="about-text">
+                    Dr. Angad Tiwari is a pioneering researcher in the field of gut health and microbiome studies. With over two decades of experience, he has contributed significantly to our understanding of the gut-brain axis and its impact on human health.
+                </p>
+                <p class="about-text">
+                    His groundbreaking research has led to numerous breakthroughs in understanding the relationship between gut bacteria and various health conditions. Dr. Tiwari's work spans multiple disciplines, combining molecular biology, neuroscience, and clinical research.
+                </p>
+                <p class="about-text">
+                    Currently leading the Gut Health Research Initiative, he continues to push the boundaries of our understanding while mentoring the next generation of researchers in this vital field.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributors Section -->
+    <section class="contributors-section">
+        <h2 class="about-title" style="text-align: center; margin-bottom: 3rem;">Our Contributors</h2>
+        <div class="contributors-grid">
+            <div class="contributor-card" style="--delay: 1">
+                <img src="/api/placeholder/120/120" alt="Sarah Johnson" class="contributor-image">
+                <h3 class="contributor-name">Sarah Johnson</h3>
+                <p class="contributor-role">Lead Researcher</p>
+            </div>
+            <div class="contributor-card" style="--delay: 2">
+                <img src="/api/placeholder/120/120" alt="Michael Chen" class="contributor-image">
+                <h3 class="contributor-name">Michael Chen</h3>
+                <p class="contributor-role">Data Analyst</p>
+            </div>
+            <div class="contributor-card" style="--delay: 3">
+                <img src="/api/placeholder/120/120" alt="Emily Rodriguez" class="contributor-image">
+                <h3 class="contributor-name">Emily Rodriguez</h3>
+                <p class="contributor-role">Clinical Coordinator</p>
+            </div>
+            <div class="contributor-card" style="--delay: 4">
+                <img src="/api/placeholder/120/120" alt="David Kumar" class="contributor-image">
+                <h3 class="contributor-name">David Kumar</h3>
+                <p class="contributor-role">Research Assistant</p>
+            </div>
+        </div>
+    </section>
+        <!--Footer-->
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <span class="copyright">© 2024 gastrobiomeX. All rights reserved.</span>
+                <span class="developer">Designed & Developed by Vishwam Tiwari</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Intersection Observer for smooth animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all contributor cards
+        document.querySelectorAll('.contributor-card').forEach(card => {
+            observer.observe(card);
+        });
+         // Progress Bar with smoother animation
+         window.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.progress-bar').style.width = scrolled + '%';
+            });
+        });
+
+     // Progress Bar Script
+     window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

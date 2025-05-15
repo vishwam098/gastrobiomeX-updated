@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decades of Discovery - Gut Health</title>
+    <link rel="stylesheet" href="/cssfiles/decades.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <img class="logo" src="/assests/logo for header.png" alt="Company Logo">
+            <div class="nav-links">
+                <a href="/index.html" class="nav-link">Home</a>
+                <a href="timemachine.html" class="nav-link">Time Machine</a>
+                <a href="about.html" class="nav-link">About us</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-ibd">
+        <div class="hero-ibd-content">
+            <h1 class="hero-ibd-title">Decades of Discovery</h1>
+            <p class="hero-ibd-subtitle">Exploring the history of Gut Health</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section-ibd">
+        <h2 class="section-title">Journey Through Time</h2>
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <p style="color: rgba(255,255,255,0.8); line-height: 1.8;">
+                Explore the fascinating evolution of gut health research across decades. From groundbreaking discoveries to revolutionary treatments, witness how our understanding of the gut microbiome has transformed medicine.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section-ibd">
+        <h2 class="section-title">Timeline of Discoveries</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1950s</h3>
+                    <p>Introduction of probiotics in gut health research</p>
+                    <ul>
+                        <li>First studies on beneficial bacteria</li>
+                        <li>Early understanding of gut flora</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1960s</h3>
+                    <p>Identification of gut-brain axis</p>
+                    <ul>
+                        <li>Discovery of neural connections</li>
+                        <li>Early research on gut-brain communication</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1970s</h3>
+                    <p>Development of FMT techniques</p>
+                    <ul>
+                        <li>First modern FMT procedures</li>
+                        <li>Standardization of protocols</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1980s</h3>
+                    <p>Gut microbiota & immune function</p>
+                    <ul>
+                        <li>Immune system interactions discovered</li>
+                        <li>Role in disease prevention identified</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Data Section -->
+    <section id="interactive-data" class="section-ibd">
+        <h2 class="section-title">Global Research Impact</h2>
+        <div class="data-container">
+            <div class="visualization-section">
+                <div class="graph-container">
+                    <h3 class="subsection-title">Research Publications Over Decades</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="discoveryBarGraph"></canvas>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <h3 class="subsection-title">Global Research Distribution</h3>
+                    <div id="worldMap"></div>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h4>Total Publications</h4>
+                    <p class="stat-number">12,450</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Research Centers</h4>
+                    <p class="stat-number">670</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Active Studies</h4>
+                    <p class="stat-number">1,350</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+        <!--Footer-->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <span class="copyright">© 2024 gastrobiomeX. All rights reserved.</span>
+            <span class="developer">Designed & Developed by Vishwam Tiwari</span>
+        </div>
+    </div>
+</footer>
+
+  
+     <script src="/jsfiles/decades.js"></script>
+</body>
+</html>

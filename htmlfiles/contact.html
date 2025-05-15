@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - gastrobiomeX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/cssfiles/contact.css">
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="nav-content">
+            <img class="logo" src="/assests/logo for header.png" alt="gastrobiomeX Logo">
+            <div class="nav-links">
+                <a href="/index.html" class="nav-link">Home</a>
+                <a href="decades.html" class="nav-link">Decades of Discovery</a>
+                <a href="timemachine.html" class="nav-link">Time Machine</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="hidden" name="access_key" value="5a2fdfc2-3448-410d-89a6-f177c344d9f4">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="access_key" value="5a2fdfc2-3448-410d-89a6-f177c344d9f4">
+                    <input type="email" class="form-input" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="access_key" value="5a2fdfc2-3448-410d-89a6-f177c344d9f4">
+                <input type="text" class="form-input" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="access_key" value="5a2fdfc2-3448-410d-89a6-f177c344d9f4">
+                <textarea class="form-input" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="center-btn">
+                <button type="submit" class="submit-btn">
+                    Send Message
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-paper-plane"></i>
+            </div>
+            <h2 class="success-title">Message Sent Successfully!</h2>
+            <p class="success-text">Thank you for reaching out. We'll get back to you shortly.</p>
+            <button class="back-btn" onclick="hideSuccess()">
+                <i class="fas fa-arrow-left"></i>
+                Go Back
+            </button>
+        </div>
+    </div>
+        <!--Footer-->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <span class="copyright">© 2024 gastrobiomeX. All rights reserved.</span>
+            <span class="developer">Designed & Developed by Vishwam Tiwari</span>
+        </div>
+    </div>
+</footer>
+    </footer>
+    <script defer>
+        // Performance and Accessibility Improvements for Existing Scripts
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.querySelector('.progress-bar');
+            const navbar = document.querySelector('.navbar');
+
+            // Debounced Scroll Event Handlers
+            const debounce = (func, delay) => {
+                let timeoutId;
+                return () => {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(func, delay);
+                };
+            };
+
+            const handleProgressBar = debounce(() => {
+                const winScroll = window.scrollY;
+                const height = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = `${scrolled}%`;
+            }, 10);
+
+            const handleNavbarScroll = debounce(() => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            }, 10);
+
+            // Event Listeners
+            window.addEventListener('scroll', handleProgressBar);
+            window.addEventListener('scroll', handleNavbarScroll);
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('successMessage').classList.add('show-success');
+        });
+
+        // Hide Success Message
+        function hideSuccess() {
+            document.getElementById('successMessage').classList.remove('show-success');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+
+</html>

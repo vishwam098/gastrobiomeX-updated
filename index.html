@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gastrobiomeX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/cssfiles/index.css">
+    <link rel="icon" type="assests" href="/assests/logo for header.png">
+</head>
+<body>
+    
+     <!-- Progress Bar -->
+     <div class="progress-bar"></div>
+
+     <!-- Navigation -->
+     <nav class="navbar">
+         <div class="nav-content">
+             <img class="logo" src="/assests/logo for header.png" alt="Company Logo">
+             <div class="nav-links">
+                 <a href="/htmlfiles/decades.html" class="nav-link">Decades of discovery</a>
+                 <a href="/htmlfiles/timemachine.html" class="nav-link">Time Machine</a>
+                 <a href="/htmlfiles/about.html" class="nav-link">About us</a>
+                 <a href="/htmlfiles/contact.html" class="nav-link">Contact us</a>
+             </div>
+         </div>
+     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">REVOLUTIONIZING GUT HEALTH</h1>
+            <p class="hero-subtitle">PRECISION MICROBIOME SCIENCE</p>
+        </div>
+    </section>
+
+     <!-- Gut microbiota Section -->
+   <section class="heading-main">
+    <h1>What is Gut Microbiota?</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia eos soluta libero labore nulla consequatur atque in, iure praesentium quaerat eligendi aliquid delectus suscipit, ducimus iusto maiores! Maiores delectus non rerum quasi aliquam tempora ullam similique quaerat odit reprehenderit laboriosam culpa minus natus, eius ad enim blanditiis accusantium fugit repudiandae, consequuntur cum iste architecto? Commodi, at! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi accusamus quis cum doloribus commodi molestias esse, enim dolor, eligendi quas minima similique dolores nostrum atque ipsum non soluta facere sapiente, molestiae illo culpa minus inventore harum reiciendis! Qui, cumque iure temporibus, sequi nostrum, nisi dolor neque reprehenderit inventore voluptatem earum eius repellat aspernatur expedita.</p>
+   </section>
+<!--Hero1 vision section-->
+<section class="hero1-container">
+    <div class="slider-container">
+      <div class="slide active" style="background-image: url('/assests/back1')"></div>
+      <div class="slide" style="background-image: url('/assests/back2.jpg')"></div>
+      <div class="slide" style="background-image: url('/assests/back3.jpg')"></div>
+    </div>
+
+    <nav class="nav-tabs">
+      <a class="nav-tab active" onclick="changeSlide(0)">INFLAMMATORY BOWEL DISEASE</a>
+      <a class="nav-tab" onclick="changeSlide(1)">FECAL MICROBIOTA TRANSPLANTATION</a>
+      <a class="nav-tab" onclick="changeSlide(2)">CLOSTRIDIUM DIFFICILE</a>
+    </nav>
+    
+    <div class="hero1-content">
+      <h1 class="hero1-title" id="hero1-title">INFLAMMATORY BOWEL DISEASE</h1>
+      <p id="hero1-text">We excel in delivering exceptional solutions tailored to your needs, leveraging cutting-edge technology and expertise.</p>
+      <a href="ibd.html" class="discover-btn">
+        Discover
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+</section>
+
+   
+    <!-- Stats Section -->
+    <section id="stats" class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Microbiome Profiles Analyzed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Research Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">Global Patents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <span class="copyright">© 2024 gastrobiomeX. All rights reserved.</span>
+            <span class="developer">Designed & Developed by Vishwam Tiwari</span>
+        </div>
+    </div>
+</footer>
+    
+
+    <script>
+         // Progress Bar with smoother animation
+         window.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.progress-bar').style.width = scrolled + '%';
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Section Animations
+        const sections = document.querySelectorAll('.section');
+        const stats = document.querySelectorAll('.stat-item');
+
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Stats Counter Animation
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const numberElement = entry.target.querySelector('.stat-number');
+                    const target = parseInt(numberElement.getAttribute('data-target'));
+                    animateNumber(numberElement, target);
+                }
+            });
+        }, observerOptions);
+
+        stats.forEach(stat => {
+            statObserver.observe(stat);
+        });
+
+        function animateNumber(element, target) {
+            let current = 0;
+            const increment = target / 50; // Adjust speed here
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                element.textContent = Math.round(current) + (target === 95 ? '%' : '+');
+            }, 30);
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+
+        
+       // Enhanced Slider JavaScript
+const slides = document.querySelectorAll('.slide');
+const navTabs = document.querySelectorAll('.nav-tab');
+const title = document.getElementById('hero1-title');
+const text = document.getElementById('hero1-text');
+
+const slideData = [
+        {
+            title: "INFLAMMATORY BOWEL DISEASE",
+            text: "We excel in delivering exceptional solutions tailored to your needs, leveraging cutting-edge technology and expertise.",
+            bgEffect: 'zoom-in',
+            textEffect: 'slide-right',
+            url: "ibd.html"
+        },
+        {
+            title: "FECAL MICROBIOTA TRANSPLANTATION",
+            text: "Our mission is to inspire innovation and drive progress, creating a better tomorrow for everyone.",
+            bgEffect: 'pan-left',
+            textEffect: 'fade-in',
+            url: "fmt.html"
+        },
+        {
+            title: "CLOSTRIDIUM DIFFICILE",
+            text: "To be a global leader in transformative technologies, enabling success and empowering communities.",
+            bgEffect: 'zoom-out',
+            textEffect: 'slide-left',
+            url: "cd.html"
+        }
+    ];
+
+    function changeSlide(index) {
+        // Remove previous effects
+        slides.forEach(slide => {
+            slide.classList.remove('zoom-in', 'zoom-out', 'pan-left');
+        });
+
+        // Update slides with new background animation
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+            if (i === index) {
+                slide.classList.add(slideData[index].bgEffect);
+            }
+        });
+
+        // Update nav-tab styles
+        navTabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === index);
+        });
+
+        // Animate title and text
+        title.classList.remove('slide-right', 'slide-left', 'fade-in');
+        text.classList.remove('slide-right', 'slide-left', 'fade-in');
+
+        // Trigger reflow to restart animation
+        void title.offsetWidth;
+        void text.offsetWidth;
+
+        // Add new text animation
+        title.innerText = slideData[index].title;
+        text.innerText = slideData[index].text;
+        title.classList.add(slideData[index].textEffect);
+        text.classList.add(slideData[index].textEffect);
+
+        // Update "Discover" button URL
+        const discoverButton = document.querySelector('.discover-btn');
+        discoverButton.href = slideData[index].url;
+        if(index === 1){
+            discoverButton.innerHTML = 'Discover <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+        } else if(index === 2){
+            discoverButton.innerHTML = 'Discover <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+        } else {
+            discoverButton.innerHTML = 'Discover <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+        }
+    }
+
+    // Initial setup
+    changeSlide(0);
+
+// Auto-slide functionality
+let currentSlide = 0;
+function autoSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    changeSlide(currentSlide);
+}
+
+// Start auto-sliding every 5 seconds
+let autoSlideInterval = setInterval(autoSlide, 5000);
+
+// Pause auto-slide on hover
+const hero1Container = document.querySelector('.hero1-container');
+hero1Container.addEventListener('mouseenter', () => {
+    clearInterval(autoSlideInterval);
+});
+
+hero1Container.addEventListener('mouseleave', () => {
+    autoSlideInterval = setInterval(autoSlide, 5000);
+});
+
+// Initial setup
+changeSlide(0);
+    </script>
+</body>
+</html>
